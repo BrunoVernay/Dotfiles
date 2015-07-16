@@ -1,0 +1,5 @@
+
+ssh-agent
+for key in $(ls ~/.ssh/*rsa) ;do
+    ssh-add $key
+done

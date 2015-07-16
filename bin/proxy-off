@@ -1,0 +1,5 @@
+sudo sed -i -e "s/^e/#e/" /etc/profile.d/proxy.sh
+sudo sed -i -e "s/^proxy/#proxy/" /etc/yum.conf
+sudo sed -i -e "s/^proxy/#proxy/" /etc/dnf/dnf.conf
+unset http_proxy
+unset https_proxy
