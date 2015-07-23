@@ -6,6 +6,7 @@ Using `vcsh` allows to use git in $HOME directory without having everything in g
 
 
 Notes:
+- It is important to first ignore all "*" the (untracked) files
 - To remove a file from the index: `git rm --cached ~/.oh-my-zsh/oh-my-zsh.sh`
 
 
