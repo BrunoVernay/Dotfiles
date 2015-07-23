@@ -1,0 +1,26 @@
+{
+	"segment_data": {
+		"powerline.segments.common.net.network_load": {
+			"args": {
+				"recv_format": "⬇ {value:>8}",
+				"sent_format": "⬆ {value:>8}"
+			}
+		},
+		"powerline.segments.common.net.hostname": {
+			"before": " ",
+			"args": { 
+                                 "only_if_ssh": true,
+                                 "exclude_domain": true
+                          }
+		},
+			"powerline.segments.common.sys.uptime": {
+			"before": "⇑  "
+		},
+		"powerline.segments.common.mail.email_imap_alert": {
+			"before": "✉ "
+		},
+		"powerline.segments.common.env.virtualenv": {
+			"before": "ⓔ  "
+		}
+	}	
+}
