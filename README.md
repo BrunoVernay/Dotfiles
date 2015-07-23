@@ -6,7 +6,9 @@ Using `vcsh` allows to use git in $HOME directory without having everything in g
 
 
 Notes:
-- It is important to first ignore all "*" the (untracked) files
+- `vcsh _MyRepo_ write-ignore` will ignore all the untracked files (very handy)
+- `vcsh _MyRepo_`  will "enter" into git world: you can issue git command directly. (`exit` to go back) 
+- `git ls-files` list all tracked files
 - To remove a file from the index: `git rm --cached ~/.oh-my-zsh/oh-my-zsh.sh`
 
 
