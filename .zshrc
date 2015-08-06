@@ -49,7 +49,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git httpie autojump)
+plugins=(git tmux autojump)
 
 # User configuration
 
@@ -70,6 +70,13 @@ export VISUAL=$EDITOR
 # else
 #   export EDITOR='mvim'
 # fi
+
+# Uses one history per tmux session
+TMUX_SESSION=$(echo $TMUX |sed -e "s#/.*/##g" -e "s/,.*//")
+if [ -n "${TMUX_SESSION}" ]; then
+  export HISTFILE=~/.zsh_history_$TMUX_SESSION
+fi
+
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
