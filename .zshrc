@@ -56,6 +56,8 @@ plugins=(git tmux autojump)
 export PATH="/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin:/home/bruno/.local/bin:/home/bruno/bin:/usr/lib64/qt-3.3/bin:/opt/ant/bin:/opt/maven/bin:/opt/packer"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+setopt no_share_history
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
