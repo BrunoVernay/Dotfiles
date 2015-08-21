@@ -3,3 +3,5 @@ sudo sed -i -e "s/^proxy/#proxy/" /etc/yum.conf
 sudo sed -i -e "s/^proxy/#proxy/" /etc/dnf/dnf.conf
 unset http_proxy
 unset https_proxy
+unset npm_config_https_proxy
+unset npm_config_proxy
