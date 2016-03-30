@@ -95,4 +95,5 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias say=espeak
+alias tw=task
 
