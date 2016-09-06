@@ -11,3 +11,9 @@
     helper = cache --timeout=28800
 [init]
 	templatedir = /home/bruno/gerrit_template
+[core]
+	autocrlf = input
+
+[merge "mps"]
+	name = MPS merge driver
+	driver = "\"/home/bruno/.MPS33/config/mps-merger.sh\" %O %A %B %L"
