@@ -49,11 +49,12 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump docker taskwarrior catimg)
+#plugins=(git autojump docker taskwarrior catimg zsh-navigation-tools bgnotify)
+plugins=(git autojump docker zsh-navigation-tools bgnotify zsh-you-should-use)
 
 # User configuration
 
-export PATH="/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin:/home/bruno/.local/bin:/home/bruno/bin:/usr/lib64/qt-3.3/bin:/opt/ant/bin:/opt/maven/bin:/opt/packer"
+export PATH="/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin:/home/bruno/.local/bin:/home/bruno/bin:/usr/lib64/qt-3.3/bin:/opt/gradle/bin:/opt/ant/bin:/opt/maven/bin:/opt/packer"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 setopt no_share_history

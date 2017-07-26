@@ -26,6 +26,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'tomlion/vim-solidity'
 
 
 " All of your Plugins must be added before the following line
