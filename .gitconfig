@@ -6,14 +6,16 @@
 [color]
 	ui = auto
 [url "https://BrunoVernay@github.com"]
-	insteadOf = https://github.com
+    insteadOf = https://github.com
+
+[includeIf "gitdir:dev/corpof/"]
+    name = SESA147313
+    email = Bruno.Vernay@Schneider-Electric.com
+
 [credential]
     helper = cache --timeout=28800
-[init]
-	templatedir = /home/bruno/gerrit_template
+#[init]
+#	templatedir = /home/bruno/gerrit_template
 [core]
 	autocrlf = input
 
-[merge "mps"]
-	name = MPS merge driver
-	driver = "\"/home/bruno/.MPS34/config/mps-merger.sh\" %O %A %B %L"

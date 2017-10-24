@@ -59,6 +59,7 @@ export PATH="/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin:/home/
 
 setopt no_share_history
 
+source /usr/share/fzf/shell/key-bindings.zsh
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment

@@ -22,12 +22,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'w0rp/ale'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'tomlion/vim-solidity'
-
+" Plugin '/usr/share/vim/vimfiles/plugin/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -104,6 +104,14 @@ if &term=="xterm"
      set t_Sb=[4%dm
      set t_Sf=[3%dm
 endif
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
 
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
