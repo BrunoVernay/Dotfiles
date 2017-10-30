@@ -1,0 +1,21 @@
+[user]
+	name = BrunoVernay
+	email = BrunoVern.a@gmail.com
+[push]
+	default = simple
+[color]
+	ui = auto
+[url "https://BrunoVernay@github.com"]
+    insteadOf = https://github.com
+
+[includeIf "gitdir:dev/corpof/"]
+    name = SESA147313
+    email = Bruno.Vernay@Schneider-Electric.com
+
+[credential]
+    helper = cache --timeout=28800
+#[init]
+#	templatedir = /home/bruno/gerrit_template
+[core]
+	autocrlf = input
+
