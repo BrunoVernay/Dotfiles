@@ -1,0 +1,16 @@
+{
+	"segment_data": {
+		"powerline.segments.common.net.network_load": {
+			"args": {
+				"recv_format": "⬇ {value:>8}",
+				"sent_format": "⬆ {value:>8}"
+			}
+		},
+		"powerline.segments.common.net.hostname": {
+			"before": " ",
+			"args": { 
+                                 "exclude_domain": true
+                          }
+		}
+	}	
+}
