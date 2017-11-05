@@ -7,13 +7,9 @@ DATA="/srv/data"
 mkdir -p $DATA
 cd $DATA
 umask 002
-mkdir -p {Documents,Music,Pictures,Videos,Downloads,iso,dev}
+mkdir -p {Documents,Music,Pictures,Videos,ISOs,dev}
 chgrp -R users $DATA/*
 
-#for i in {Documents,Music,Pictures,Videos,Downloads,iso,dev}; do
- #   mkdir -p $i
- #   umask 002
-#done
  
 MYUSER="bruno2"
 useradd --no-user-group --shell /bin/zsh -G adm,disk,wheel,mail,dialout,lock,audio,vboxusers,libvirt,wireshark $MYUSER
@@ -23,9 +19,14 @@ useradd --no-user-group --shell /bin/zsh -G adm,disk,wheel,mail,dialout,lock,aud
 # "su -" sets user environment.  "<<-" removes leading spaces. "\$i" otherwise it is expanded too early
 su - $MYUSER <<- EOF
   cd
-  rm -rf {Documents,Music,Pictures,Videos,Downloads,iso,dev}
-  for i in {Documents,Music,Pictures,Videos,Downloads,iso,dev}; do
+  rm -rf {Desktop,Documents,Music,Pictures,Videos}
+  for i in {Documents,Music,Pictures,Videos,ISOs,dev}; do
     ln -s $DATA/\$i 
   done
+  rm .zshrc
+  vcsh clone https://github.com/BrunoVernay/Dotfiles.git
+  git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.config/oh-my-zsh
+  git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim +PluginInstall +qall
 EOF
 
