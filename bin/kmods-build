@@ -1,7 +1,0 @@
-# Usefull for VirtualBox for example
-sudo akmods
-sudo systemctl restart systemd-modules-load.service
-
-# With VirtualBox 5.0 it seems to be:
-sudo /usr/lib/virtualbox/vboxdrv.sh setup
-
