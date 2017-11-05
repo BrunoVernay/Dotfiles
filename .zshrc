@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.config/oh-my-zsh
 
 # useful for the Agnoster theme:
 export DEFAULT_USER=$USER
@@ -54,7 +54,7 @@ plugins=(git autojump docker zsh-navigation-tools bgnotify zsh-you-should-use)
 
 # User configuration
 
-export PATH="/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin:/home/bruno/.local/bin:/home/bruno/bin:/usr/lib64/qt-3.3/bin:/opt/gradle/bin:/opt/ant/bin:/opt/maven/bin:/opt/packer"
+export PATH="/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin:/home/bruno/.local/bin:/home/bruno/bin:/opt/gradle/bin:/opt/ant/bin:/opt/maven/bin:/opt/packer"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 setopt no_share_history
