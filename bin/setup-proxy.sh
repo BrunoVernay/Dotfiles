@@ -38,11 +38,10 @@ mkdir -p /opt/bin
 tee /opt/bin/proxymaybe.sh <<'EOF'
 #!/bin/bash
 
-sed -i '/proxy/d' /etc/environment
 if [[ $(curl -s -o /dev/null -I -w "%{http_code}" 74.125.133.115) != 301 ]]; then
- echo 'http_proxy="http://SESA147313@gateway.zscaler.net:80/"' >> /etc/environment
- echo 'https_proxy="http://SESA147313@gateway.zscaler.net:80/"' >> /etc/environment
- echo 'no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com,.schneider-electric.com"' >> /etc/environment
+ echo 'Set Proxy' > /opt/bin/proxy.txt
+else
+ echo 'Set NO Proxy' > /opt/bin/proxy.txt
 fi
 # if ping -q -c 2 -W 3 gad.schneider-electric.com > /dev/null 2>&1 ; then
 EOF

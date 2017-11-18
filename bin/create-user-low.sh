@@ -1,10 +1,9 @@
 
  
-MYUSER="bruno2"
+MYUSER="broum"
 DATA=/srv/data
-
-useradd --no-user-group --shell /bin/zsh -G adm,disk,wheel,mail,dialout,lock,audio,vboxusers,libvirt,wireshark $MYUSER
-# sudo userdel -Zr bruno2
+useradd --no-user-group --shell /bin/zsh -G disk,dialout,lock,audio $MYUSER
+# sudo userdel -Zr broum
 
 # Safer and easier  to give up priviledges:
 # "su -" sets user environment.  "<<-" removes leading spaces. "\$i" otherwise it is expanded too early
@@ -22,4 +21,3 @@ su - $MYUSER <<- EOF
 EOF
 
 echo "Do not forget to set a password !!!"
-
