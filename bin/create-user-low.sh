@@ -2,7 +2,7 @@
  
 MYUSER="broum"
 DATA=/srv/data
-useradd --no-user-group --shell /bin/zsh -G disk,dialout,lock,audio $MYUSER
+useradd --no-user-group --shell /bin/zsh -G disk,dialout,lock,audio,jackuser $MYUSER
 # sudo userdel -Zr broum
 
 # Safer and easier  to give up priviledges:

@@ -3,10 +3,10 @@
 tee /etc/profile.d/proxymaybe.sh <<'EOF'
 #!/bin/bash
 
-if ping -q -c 2 -W 3 gad.schneider-electric.com > /dev/null 2>&1 ; then
+if host -t SOA -W1 gad.schneider-electric.com > /dev/null 2>&1 ; then
     echo "Proxy ON"
-#    export http_proxy="http://SESA147313@gateway.zscaler.net:80/"
-#    export https_proxy=$http_proxy
+    export http_proxy="http://SESA147313@gateway.zscaler.net:80/"
+    export https_proxy=$http_proxy
     export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com,.schneider-electric.com"
 
     export npm_config_proxy=$http_proxy
@@ -38,12 +38,11 @@ mkdir -p /opt/bin
 tee /opt/bin/proxymaybe.sh <<'EOF'
 #!/bin/bash
 
-if [[ $(curl -s -o /dev/null -I -w "%{http_code}" 74.125.133.115) != 301 ]]; then
+if host -t SOA -W1 gad.schneider-electric.com > /dev/null 2>&1 ; then
  echo 'Set Proxy' > /opt/bin/proxy.txt
 else
  echo 'Set NO Proxy' > /opt/bin/proxy.txt
 fi
-# if ping -q -c 2 -W 3 gad.schneider-electric.com > /dev/null 2>&1 ; then
 EOF
 
 chmod +x /opt/bin/proxymaybe.sh
