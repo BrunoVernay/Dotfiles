@@ -21,5 +21,5 @@ su - $MYUSER <<- EOF
   vim +PluginInstall +qall
 EOF
 
-echo "Do not forget to set a password !!!"
+echo -e "\nDo not forget to set a password !!!"
 

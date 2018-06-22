@@ -13,38 +13,29 @@ let g:Powerline_symbols = 'fancy'
 " Always show statusline
 set laststatus=2
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+packadd minpac
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+call minpac#init()
 
-Plugin 'w0rp/ale'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'Chiel92/vim-autoformat'
-" Plugin '/usr/share/vim/vimfiles/plugin/fzf.vim'
+" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
+call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Add other plugins here.
+call minpac#add('vim-jp/syntax-vim-ex')
+call minpac#add('w0rp/ale')
+call minpac#add( 'godlygeek/tabular')
+"call minpac#add( 'plasticboy/vim-markdown')
+call minpac#add( 'chase/vim-ansible-yaml')
+call minpac#add( 'Chiel92/vim-autoformat')
+call minpac#add( 'tpope/vim-surround')
+" call minpac#add( '/usr/share/vim/vimfiles/plugin/fzf.vim')
 
-" let g:vim_markdown_folding_disabled=1
+" Load the plugins right now. (optional)
+"packloadall
+
+
+
+"let g:vim_markdown_folding_disabled=1
 
 filetype plugin indent on
 set tabstop=4

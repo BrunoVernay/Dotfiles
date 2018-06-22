@@ -3,7 +3,7 @@
 tee /etc/profile.d/proxymaybe.sh <<'EOF'
 #!/bin/bash
 
-if host -t SOA -W1 gad.schneider-electric.com > /dev/null 2>&1 ; then
+if host -t SOA -W1 eur.gad.schneider-electric.com > /dev/null 2>&1 ; then
     echo "Proxy ON"
     export http_proxy="http://SESA147313@gateway.zscaler.net:80/"
     export https_proxy=$http_proxy
@@ -38,11 +38,29 @@ mkdir -p /opt/bin
 tee /opt/bin/proxymaybe.sh <<'EOF'
 #!/bin/bash
 
-if host -t SOA -W1 gad.schneider-electric.com > /dev/null 2>&1 ; then
- echo 'Set Proxy' > /opt/bin/proxy.txt
+# Debugging purpose
+
+echo -e "\n ##### \n " >> /opt/bin/proxy.txt
+date -Iminutes >> /opt/bin/proxy.txt
+
+echo -e "\nhost -W1 eur.gad.schneider-electric.com \n " >> /opt/bin/proxy.txt
+if host -W1 eur.gad.schneider-electric.com > /dev/null 2>&1 ; then
+ echo 'Set Proxy' >> /opt/bin/proxy.txt
 else
- echo 'Set NO Proxy' > /opt/bin/proxy.txt
+ echo 'Set NO Proxy' >> /opt/bin/proxy.txt
 fi
+host -W 1 eur.gad.schneider-electric.com >> /opt/bin/proxy.txt
+
+echo -e "\n host -t SOA -W1 eur.gad.schneider-electric.com \n " >> /opt/bin/proxy.txt
+if host -t SOA -W1 eur.gad.schneider-electric.com > /dev/null 2>&1 ; then
+ echo 'Set Proxy' >> /opt/bin/proxy.txt
+else
+ echo 'Set NO Proxy' >> /opt/bin/proxy.txt
+fi
+host -t SOA -W1 eur.gad.schneider-electric.com >> /opt/bin/proxy.txt
+
+echo -e "\n ##### \n " >> /opt/bin/proxy.txt
+
 EOF
 
 chmod +x /opt/bin/proxymaybe.sh
