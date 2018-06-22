@@ -46,8 +46,23 @@ DATA="/srv/data"
 #rm -rf $DATA
 
 mkdir -p $DATA
-cd $DATA
+cd $DATA || return
 umask 002
 mkdir -p {Documents,Music,Pictures,Videos,ISOs,dev}
 chgrp -R users $DATA/*
+
+tee /etc/systemd/system/srv-data.service <<'EOF'
+[Unit]
+Description=Startup script to fix the right in /srv/data
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/chmod -R g+w /srv/data/Videos /srv/data/Music /srv/data/Pictures /srv/data/Documents
+#ExecStart=/usr/bin/chmod -R g+w /srv/data/{Videos,Music,Pictures,Documents}
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl enable srv-data.service
 
